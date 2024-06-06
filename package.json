@@ -5,17 +5,28 @@
   "main": "index.js",
   "scripts": {
     "test": "pnpm vitest",
-    "format":"pnpm @biomejs/biome format --write ./src",
-    "lint":"pnpm @biomejs/biome lint --write ./src",
-    "check":"pnpm @biomejs/biome check --write ./src"
+    "format": "pnpm @biomejs/biome format --write ./src",
+    "lint": "pnpm @biomejs/biome lint --write ./src",
+    "check": "pnpm @biomejs/biome check --write ./src",
+    "dev": "pnpm vite",
+    "build-sw":"pnpm tsc src/sw.ts --module es2022 --target es2022 --outDir ./",
+    "watch-sw":"pnpm tsc --watch src/sw.ts --module es2022 --target es2022 --outDir ./"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "1.8.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
     "lefthook": "^1.6.15",
     "typescript": "^5.4.5",
+    "vite": "^5.2.12",
     "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
